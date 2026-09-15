@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+```
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Presente</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="jogo.css">
+```
+
+</head>
+
+<body>
+
+```
+<main id="tela">
+
+    <div id="confetes-caindo"></div>
+
+    <img
+        id="npc"
+        src="imagens/npc_maos.png"
+        alt="Personagem"
+    >
+
+    <div id="caixa-fala" class="caixa-dialogo">
+        <p id="texto-fala">Oi...</p>
+    </div>
+
+    <img
+        id="presente"
+        src="imagens/presente.png"
+        alt="Presente"
+    >
+
+    <div id="confetes"></div>
+
+    <p id="espera-texto">...espera.</p>
+
+</main>
+
+
+<section id="cena-quarto" class="cena" hidden>
+
+    <div class="quarto-stage" id="quarto-stage">
+
+        <img
+            id="quarto-fundo"
+            src="imagens/quarto.png"
+            alt="Quarto"
+        >
+
+        <div
+            class="quarto-luz"
+            id="quarto-luz"
+        ></div>
+
+
+        <button
+            type="button"
+            class="hotspot hotspot-janela"
+            data-obj="janela"
+            aria-label="Janela"
+        ></button>
+
+
+        <button
+            type="button"
+            class="hotspot hotspot-porta"
+            data-obj="porta"
+            aria-label="Porta"
+        ></button>
+
+
+        <button
+            type="button"
+            class="hotspot hotspot-estante"
+            data-obj="estante"
+            aria-label="Estante"
+        ></button>
+
+
+        <button
+            type="button"
+            class="hotspot hotspot-computador"
+            data-obj="computador"
+            aria-label="Computador"
+        ></button>
+
+
+        <button
+            type="button"
+            class="hotspot hotspot-cama"
+            data-obj="cama"
+            aria-label="Cama"
+        ></button>
+
+
+        <button
+            type="button"
+            class="hotspot hotspot-caixa"
+            data-obj="caixa"
+            aria-label="Caixa"
+        ></button>
+
+    </div>
+
+
+    <aside
+        id="inventario"
+        aria-label="Inventário"
+    >
+
+        <p class="inventario-titulo">
+            INVENTÁRIO
+        </p>
+
+        <div id="inventario-itens"></div>
+
+    </aside>
+
+
+    <div id="overlay-fala" hidden>
+
+        <div
+            id="caixa-jogo"
+            class="caixa-dialogo"
+        >
+
+            <p id="texto-jogo"></p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="cena-pc" class="cena" hidden>
+
+    <div class="pc-shell">
+
+        <header class="pc-barra">
+
+            <span>MORENO-PC</span>
+
+            <button
+                type="button"
+                id="pc-fechar"
+            >
+                fechar
+            </button>
+
+        </header>
+
+
+        <div class="pc-corpo">
+
+            <p class="pc-caminho">
+                C:\MORENO\HOME\
+            </p>
+
+
+            <div
+                class="pc-arquivos"
+                id="pc-arquivos"
+            >
+
+                <button
+                    type="button"
+                    class="pc-arquivo"
+                    data-arquivo="birthday"
+                >
+
+                    <span class="pc-icone">
+                        TXT
+                    </span>
+
+                    birthday.txt
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="pc-arquivo"
+                    data-arquivo="memories"
+                >
+
+                    <span class="pc-icone">
+                        DAT
+                    </span>
+
+                    memories.dat
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="pc-arquivo"
+                    data-arquivo="readme"
+                >
+
+                    <span class="pc-icone">
+                        TXT
+                    </span>
+
+                    readme.txt
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="pc-arquivo"
+                    data-arquivo="secret"
+                >
+
+                    <span class="pc-icone">
+                        LCK
+                    </span>
+
+                    secret.lock
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div
+        id="pc-janela"
+        class="pc-janela"
+        hidden
+    >
+
+        <header class="pc-janela-barra">
+
+            <span id="pc-janela-titulo">
+                arquivo
+            </span>
+
+            <button
+                type="button"
+                id="pc-janela-fechar"
+            >
+                x
+            </button>
+
+        </header>
+
+
+        <div
+            class="pc-janela-corpo"
+            id="pc-janela-corpo"
+        ></div>
+
+    </div>
+
+</section>
+
+
+<!-- FINAL -->
+
+<section
+    id="cena-final"
+    class="cena"
+    hidden
+>
+
+    <div class="final-composicao">
+
+
+        <div
+            class="final-foto"
+            id="final-foto"
+        >
+
+            <span>
+                [FOTO_FINAL]
+            </span>
+
+        </div>
+
+
+        <div class="final-texto">
+
+            <p
+                class="final-titulo"
+            >
+                feliz aniversário, meu amor
+            </p>
+
+
+            <p
+                class="final-mensagem"
+                id="final-mensagem"
+            >
+                [MENSAGEM_FINAL]
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<button
+    type="button"
+    id="btn-musica"
+    hidden
+    aria-label="Pausar ou tocar música"
+>
+    som
+</button>
+
+
+<audio
+    id="musica-exploracao"
+    preload="none"
+    loop
+></audio>
+
+
+<audio
+    id="musica-final"
+    preload="none"
+    loop
+></audio>
+
+
+<script src="script.js"></script>
+```
+
+</body>
+
+</html>
